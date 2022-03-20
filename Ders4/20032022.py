@@ -1,8 +1,5 @@
 import random
-zorluk = input("Bir seviye seçiniz (kolay/orta/zor): ")
-print("********************************************************************************************************")
-print("Bütün seviyelerde sadece 3 hakkınız vardır.")
-print("********************************************************************************************************")
+
 
 def tahmin_etme(tuttugumsayi):
     i = 0
@@ -26,7 +23,7 @@ def tahmin_etme(tuttugumsayi):
             print("-------------------")
 
         i += 1
-        a = int(input("Sayıyı tahmin et."))
+        a = int(input("Sayıyı tahmin et: "))
         if a < tuttugumsayi:
             print("-------------------")
             print("Sayınızı büyütün")
@@ -40,17 +37,20 @@ def tahmin_etme(tuttugumsayi):
             break
 
 
-if zorluk == "kolay":
-    tuttugumsayi = random.randint(1,10)
-    tahmin_etme(tuttugumsayi)
-elif zorluk == "orta":
-    tuttugumsayi = random.randint(1,50)
-    tahmin_etme(tuttugumsayi)
-elif zorluk == "zor":
-    tuttugumsayi = random.randint(1,100)
-    tahmin_etme(tuttugumsayi)
-else:
-    print("Yanlıs seviye girildi")
+while True:
+    zorluk = input("Bir seviye seçiniz (kolay/orta/zor): ").lower
+
+    if zorluk == "kolay":
+        tuttugumsayi = random.randint(1,10)
+        tahmin_etme(tuttugumsayi)
+    elif zorluk == "orta":
+        tuttugumsayi = random.randint(1,50)
+        tahmin_etme(tuttugumsayi)
+    elif zorluk == "zor":
+        tuttugumsayi = random.randint(1,100)
+        tahmin_etme(tuttugumsayi)
+    else:
+        print("Yanlıs seviye girildi")
 
 
 
